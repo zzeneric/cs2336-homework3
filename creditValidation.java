@@ -1,6 +1,8 @@
-import java.util.Scanner;
+// Raghav Pillai, 6/24/21
 
-public class creditValidation {   
+import java.util.Scanner; // import Scanner for input
+
+public class creditValidation{   
     public static long getInput(){
         Scanner input = new Scanner(System.in); // Create a Scanner
 
