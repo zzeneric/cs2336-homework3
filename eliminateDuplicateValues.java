@@ -3,10 +3,10 @@
 import java.util.Scanner; // import Scanner for input
 
 public class eliminateDuplicateValues{
-    public static int[] eliminateDuplicates(int[] list){
+    public static int[] eliminateDuplicates(int[] list){ // Eliminate the duplicates
         int[] newList = new int[list.length]; // New list to hold non duplicate numbers
         for(int i = 0; i < list.length; i++){ // Loop through list
-            if (checkValues(newList, list[i])){ // Check values to see if it already is put in table
+            if (checkValues(newList, list[i])){ // Check values to see if it already is put in table (linear search)
                 newList[i] = list[i]; // Assign if not
             }
         }
@@ -25,7 +25,7 @@ public class eliminateDuplicateValues{
         return numbers; // Return the int table
     }
 
-    public static boolean checkValues(int[] numbers, int toFind){ // Find if the value already exists in numbers
+    public static boolean checkValues(int[] numbers, int toFind){ // Find if the value already exists in numbers (linear search)
 		for (int i = 0; i < numbers.length; i++) { // Loop through existing values
 			if (toFind == numbers[i]){ // If found
                 return false;
@@ -33,19 +33,17 @@ public class eliminateDuplicateValues{
 		}
 		return true; // Doesn't exist yet
 	}
-
-    public static void main(String[] args){
+    
+    public static void main(String[] args){ // Main argument
         int[] numbers = getInput(); // Get all inputs and cast to int array
-
-        int[] distinctNumbers = eliminateDuplicates(numbers);
+        int[] newTable = eliminateDuplicates(numbers); // Eliminate duplicates from the existing array
 
 		// Display the result
 		System.out.print("The distinct numbers are:");
-        for(int i = 0; i < distinctNumbers.length; i++){
-            if (distinctNumbers[i] > 0){
-                System.out.print(" " + distinctNumbers[i]);
+        for(int i = 0; i < newTable.length; i++){ // Print out the new numbers
+            if (newTable[i] > 0){ // New table exists
+                System.out.print(" " + newTable[i]);
             }
         }
-		System.out.println();
     }
 }
